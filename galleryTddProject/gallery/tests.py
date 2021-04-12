@@ -38,6 +38,13 @@ class GalleryTestCase(TestCase):
         current_data=json.loads(response.content)
         self.assertEqual(current_data[0]['fields']['username'],'testUser')
 
+    def test_status_portafolio(self):
+        user_model = User.objects.create_user(username='test', password='kd8wke-DE34', first_name='test', last_name='test', email='test@test.com')
+        user_model1 = User.objects.create_user(username='test1', password='kd8wke-DE34', first_name='test1', last_name='test1', email='test1@test.com')
+
+        response=self.client.get('/gallery/getPortafolio/')
+        self.assertEqual(response.status_code,200)
+
     def test_return_portafolio(self):
         user_model = User.objects.create_user(username='test', password='kd8wke-DE34', first_name='test', last_name='test', email='test@test.com')
         user_model1 = User.objects.create_user(username='test1', password='kd8wke-DE34', first_name='test1', last_name='test1', email='test1@test.com')
