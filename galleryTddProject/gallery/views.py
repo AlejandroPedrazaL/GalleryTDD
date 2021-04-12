@@ -31,6 +31,6 @@ def add_user_view(request):
 
 @csrf_exempt
 def get_portafolios(request):
-    if request.method == 'GETs':
+    if request.method == 'GET':
         user_list = User.objects.all
         return HttpResponse(serializers.serialize("json", user_list))
