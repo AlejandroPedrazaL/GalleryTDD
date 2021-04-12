@@ -28,3 +28,9 @@ def add_user_view(request):
         user_model.email = email
         user_model.save()
     return HttpResponse(serializers.serialize("json", [user_model]))
+
+@csrf_exempt
+def get_portafolios(request):
+    if request.method == 'GETs':
+        user_list = User.objects.all
+        return HttpResponse(serializers.serialize("json", user_list))
