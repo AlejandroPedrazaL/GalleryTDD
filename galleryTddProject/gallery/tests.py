@@ -63,7 +63,7 @@ class GalleryTestCase(TestCase):
         self.assertEqual(current_data[0]['fields']['password'],info_user.password)
         self.assertEqual(current_data[0]['fields']['email'],info_user.email)
 
-    def test_return_portafolio(self):
+    def test_return_public(self):
         user_model = User.objects.create_user(username='test', password='kd8wke-DE34', first_name='test', last_name='test', email='test@test.com')
         Image.objects.create(name='nuevo', url='No', description='testImage', type='jpg', user=user_model)
         Image.objects.create(name='nuevo2', url='No', description='testImage', type='jpg', user=user_model)
