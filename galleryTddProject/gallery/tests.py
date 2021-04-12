@@ -61,5 +61,5 @@ class GalleryTestCase(TestCase):
         self.assertEqual(current_data[0]['fields']['first_name'],info_user.first_name)
         self.assertEqual(current_data[0]['fields']['last_name'],info_user.last_name)
         self.assertEqual(current_data[0]['fields']['password'],info_user.password)
-        self.assertEqual(current_data[0]['fields']['e-mail'],info_user.email)
+        self.assertEqual(current_data[0]['fields']['email'],info_user.email)
         
